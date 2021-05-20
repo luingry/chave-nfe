@@ -42,7 +42,7 @@
 				console.log(r);
 
 				if (r) {
-					$('.sugestion').html('Utilize esta chave: ' + newkey);
+					$('.sugestion').html('Utilize esta chave: ' + $('<b>') +newkey + $('</b>'));
 					$('.result').removeAttr('disabled');
 					break;
 				}
@@ -87,7 +87,7 @@
 			width: 350px;
 		}
 
-		.result {
+		.result, . {
 			color: green;
 			display: block;
 			font-weight: bold;
