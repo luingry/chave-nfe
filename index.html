@@ -32,7 +32,7 @@
 
 		$(function(){
 			$('[name=chave-nfe]').on('change keyup', () => {
-				let r = isValid($(this).val().toString());
+				let r = isValid('"' + $(this).val().toString() + '"');
 				console.log(r);
 
 				if (r) {
