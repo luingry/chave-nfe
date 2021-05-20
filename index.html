@@ -31,6 +31,9 @@
 		}
 
 		$(function(){
+			$('[name=chave-nfe]').on('onchange', () => {
+				console.log(isValid($(this).val()));
+			})
 			console.log($('[name=chave-nfe]'));
 		})
 
