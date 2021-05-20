@@ -43,8 +43,37 @@
 		})
 
 	</script>
-	<input maxlength="44" name="chave-nfe" placeholder="Insira a chave da nota fiscal para validar">
-	<br>
-	<span class="result"></span>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+		}
+		
+		.wrapper {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+		}
+
+		input {
+			border: 1px solid #ddd;
+			height: 50px;
+			font-family: sans-serif;
+			width: 350px;
+		}
+
+		.result {
+			display: block;
+			font-weight: bold;
+			font-family: sans-serif;
+			text-align: center;
+		}
+	</style>
+
+	<div class="wrapper">
+		<input maxlength="44" name="chave-nfe" placeholder="Insira a chave da nota fiscal para validar">
+		<br>
+		<span class="result"></span>
+	</div>
 </body>
 </html>
