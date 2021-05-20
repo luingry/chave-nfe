@@ -44,8 +44,6 @@
 
 				if (r) {
 					$('.sugestion').html('A chave com o digito verificador válido é esta: ').append(keywrapper);
-
-					$('#key-nfe').removeAttr('disabled');
 					break;
 				}
 				counter++;
@@ -61,7 +59,6 @@
 					$('.result').html('Chave válida!');
 					$('.sugestion').html('');
 				} else {
-					$('#key-nfe').attr('disabled', true);
 					$('.result').html('')
 					$('.sugestion').html('');
 					findValidVerifier(key);
