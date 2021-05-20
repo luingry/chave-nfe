@@ -39,7 +39,6 @@
 				let newkey = keynfe.replace(/.$/, counter);
 				let r = isValid(newkey);
 				let keywrapper = $('<b>').append((newkey));
-				console.log(keywrapper);
 
 				if (r) {
 					$('.sugestion').html('A chave com o digito verificador válido é esta: ').append(keywrapper);
