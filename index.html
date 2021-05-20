@@ -31,7 +31,7 @@
 		}
 
 		$(function(){
-			$('[name=chave-nfe]').on('change', () => {
+			$('[name=chave-nfe]').on('change keydown keyup', () => {
 				console.log(isValid($(this).val()));
 			})
 			console.log($('[name=chave-nfe]'));
