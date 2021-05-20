@@ -33,7 +33,7 @@
 		$(function(){
 			$('[name=chave-nfe]').on('change keyup', () => {
 				let r = isValid($(this).val().toString());
-				console.log(isValid($(this).val().toString()));
+				console.log(r);
 
 				if (r) {
 					$('.result').html('Digito verificador válido!')
@@ -45,7 +45,7 @@
 		})
 
 	</script>
-	<input type="text" name="chave-nfe" placeholder="Insira a chave da nota fiscal para validar">
+	<input type="number" name="chave-nfe" placeholder="Insira a chave da nota fiscal para validar">
 	<span class="result"></span>
 </body>
 </html>
