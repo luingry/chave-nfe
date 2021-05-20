@@ -38,11 +38,12 @@
 				let digit = keynfe[43];
 				let newkey = keynfe.replace(/.$/, counter);
 				let r = isValid(newkey);
-				console.log(newkey);
-				console.log(r);
+				let keywrapper = $('<b>').append((newkey));
+				console.log(keywrapper);
 
 				if (r) {
-					$('.sugestion').html('A chave com o digito válido é esta: ' + (newkey));
+					$('.sugestion').html('A chave com o digito verificador válido é esta: ').append(keywrapper);
+
 					$('.result').removeAttr('disabled');
 					break;
 				}
@@ -95,12 +96,11 @@
 		.result, .sugestion {
 			color: green;
 			display: block;
-			font-weight: bold;
 			font-family: sans-serif;
 			text-align: center;
 		}
 
-		.sugestion {
+		.sugestion b {
 			color: orange;
 		}
 
