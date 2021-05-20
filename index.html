@@ -36,13 +36,13 @@
 			while (counter < 10) {
 
 				let digit = keynfe[43];
-				let newkey = keynfe.replace(/.$/, counter);
+				let newkey = `<b>${keynfe.replace(/.$/, counter)}</b>`;
 				let r = isValid(newkey);
 				console.log(newkey);
 				console.log(r);
 
 				if (r) {
-					$('.sugestion').html('Utilize esta chave: ' + $('<b>') +newkey + $('</b>'));
+					$('.sugestion').html('Utilize esta chave: ' +$(newkey));
 					$('.result').removeAttr('disabled');
 					break;
 				}
@@ -55,7 +55,7 @@
 				let key = $($(e.currentTarget)[0]).val();
 				let r = isValid(key);
 
-				if (r) {
+				if (r && key.length == 44) {
 					$('.result').html('Digito verificador válido!')
 				} else {
 					$('.result').attr('disabled', true).html('')
