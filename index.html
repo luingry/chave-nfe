@@ -40,6 +40,8 @@
 				let r = isValid(newkey);
 				let keywrapper = $('<b>').append((newkey));
 
+				$('.sugestion').html('');
+
 				if (r) {
 					$('.sugestion').html('A chave com o digito verificador válido é esta: ').append(keywrapper);
 
