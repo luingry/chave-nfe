@@ -30,14 +30,36 @@
 		  return String(dv) === chaveAcesso.substring(43, 44)
 		}
 
+		const findValidVerifier = keynfe => {
+			let counter = 0;
+
+			while (counter < 10) {
+
+				let digit = keynfe[43];
+				let newkey = keynfe.replace(/.$/, counter);
+				let r = isValid(newkey);
+				console.log(newkey);
+				console.log(r);
+
+				if (r) {
+					$('.sugestion').html('Utilize esta chave: ' + newkey);
+					$('.result').removeAttr('disabled');
+					break;
+				}
+				counter++;
+			}
+		}
+
 		$(function(){
 			$('[name=chave-nfe]').on('change keyup', (e) => {
-				let r = isValid( $($(e.currentTarget)[0]).val());
+				let key = $($(e.currentTarget)[0]).val();
+				let r = isValid(key);
 
 				if (r) {
 					$('.result').html('Digito verificador válido!')
 				} else {
-					$('.result').html('')
+					$('.result').attr('disabled', true).html('')
+					findValidVerifier(key);
 				}
 			})
 		})
@@ -80,6 +102,7 @@
 		<input maxlength="44" name="chave-nfe" placeholder="Insira a chave da nota fiscal para validar">
 		<br>
 		<span class="result"></span>
+		<span class="sugestion"></span>
 	</div>
 </body>
 </html>
