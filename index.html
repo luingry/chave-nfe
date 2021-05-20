@@ -36,13 +36,13 @@
 			while (counter < 10) {
 
 				let digit = keynfe[43];
-				let newkey = `<b>${keynfe.replace(/.$/, counter)}</b>`;
+				let newkey = keynfe.replace(/.$/, counter);
 				let r = isValid(newkey);
 				console.log(newkey);
 				console.log(r);
 
 				if (r) {
-					$('.sugestion').html('Utilize esta chave: ' +$(newkey));
+					$('.sugestion').html('Utilize esta chave: ' + (newkey));
 					$('.result').removeAttr('disabled');
 					break;
 				}
@@ -87,13 +87,18 @@
 			width: 350px;
 		}
 
-		.result, . {
+		.result, .sugestion {
 			color: green;
 			display: block;
 			font-weight: bold;
 			font-family: sans-serif;
 			text-align: center;
 		}
+
+		.sugestion {
+			color: orange;
+		}
+
 	</style>
 
 	<div class="wrapper">
