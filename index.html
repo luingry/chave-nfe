@@ -34,6 +34,7 @@
 			$('[name=chave-nfe]').on('change keyup', () => {
 				let r = isValid( $($(this)[0]).val());
 				console.log(r);
+				console.log($($(this)[0]).val())
 
 				if (r) {
 					$('.result').html('Digito verificador válido!')
