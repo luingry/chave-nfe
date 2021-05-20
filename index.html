@@ -31,8 +31,8 @@
 		}
 
 		$(function(){
-			$('[name=chave-nfe]').on('change keyup', () => {
-				let r = isValid( $($(this)[0]).val());
+			$('[name=chave-nfe]').on('change keyup', (e) => {
+				let r = isValid( $($(e.currentTarget)[0]).val());
 				console.log(r);
 				console.log($($(this)[0]).val())
 
